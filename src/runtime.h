@@ -24,7 +24,7 @@ public:
         return result->second;
     }
 
-    static PythonScriptRuntime* Instance()
+    static PythonScriptRuntime* GetInstance()
     {
         return instance;
     }

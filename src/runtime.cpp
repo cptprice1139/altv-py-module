@@ -1,6 +1,8 @@
 #include "runtime.h"
 #include "resource.h"
 
+PythonScriptRuntime* PythonScriptRuntime::instance = nullptr;
+
 PythonScriptRuntime::PythonScriptRuntime()
 {
     python::initialize_interpreter(false);
