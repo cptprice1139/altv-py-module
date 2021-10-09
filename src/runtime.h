@@ -1,16 +1,15 @@
 #pragma once
 
-#include <SDK.h>
 #include "main.h"
-#include "resource.h"
 
-class PythonScriptRuntime : public alt::IScriptRuntime {
+class PythonResource;
+class PythonRuntime : public alt::IScriptRuntime {
 
-    static PythonScriptRuntime* instance;
+    static PythonRuntime* instance;
     std::unordered_map<alt::IResource*, PythonResource*> resources;
 
 public:
-    PythonScriptRuntime();
+    PythonRuntime();
 
     alt::IResource::Impl* CreateImpl(alt::IResource* resource) override;
     void DestroyImpl(alt::IResource::Impl* impl) override;
@@ -24,7 +23,7 @@ public:
         return result->second;
     }
 
-    static PythonScriptRuntime* GetInstance()
+    static PythonRuntime* GetInstance()
     {
         return instance;
     }

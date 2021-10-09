@@ -5,10 +5,10 @@ EXPORT bool altMain(alt::ICore* core)
 {
     alt::ICore::SetInstance(core);
 
-    auto runtime = new PythonScriptRuntime();
+    auto runtime = new PythonRuntime();
     core->RegisterScriptRuntime("python", runtime);
 
-    core->LogColored("~r~ Python module was loaded. Version 1.0.0");
+    core->LogColored("~g~Python module was loaded. Version 1.0.0");
 
     return true;
 }
