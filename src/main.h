@@ -1,14 +1,9 @@
-//
-// Created by Marlon on 09/10/2021.
-//
+#pragma once
 
-#ifndef ALTV_PY_MODULE_MAIN_H
-#define ALTV_PY_MODULE_MAIN_H
+#define ALT_SERVER_MODULE
+ 
+#include <SDK.h>
 
+#include <pybind11/pybind11.h>
 
-class main {
-
-};
-
-
-#endif //ALTV_PY_MODULE_MAIN_H
+namespace python = pybind11;
