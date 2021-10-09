@@ -4,6 +4,7 @@
 .vs/
 .vscode/
 build/
+dist/
 cmake-build-debug/
 
 # File extensions

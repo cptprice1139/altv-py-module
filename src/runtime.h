@@ -1,24 +1,21 @@
 #pragma once
 
 #include <SDK.h>
+#include "main.h"
+#include "resource.h"
 
 class PythonScriptRuntime : public alt::IScriptRuntime {
 
-    pythonIScriptEngine* engine;
+    static PythonScriptRuntime* instance;
     std::unordered_map<alt::IResource*, PythonResource*> resources;
 
 public:
     PythonScriptRuntime();
 
     alt::IResource::Impl* CreateImpl(alt::IResource* resource) override;
-    void DestroyImpl(alt::IResource* resource) override;
+    void DestroyImpl(alt::IResource::Impl* impl) override;
     void OnTick() override;
     void OnDispose() override;
-
-    pythonIScriptEngine* GetEngine()
-    {
-        return engine;
-    }
 
     PythonResource* GetResource(alt::IResource* resource)
     {
@@ -27,9 +24,8 @@ public:
         return result->second;
     }
 
-    static PythonScriptRuntime& Instance()
+    static PythonScriptRuntime* Instance()
     {
-        static PythonScriptRuntime _instance;
-        return _instance;
+        return instance;
     }
 };

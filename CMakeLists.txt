@@ -5,17 +5,7 @@ project(altv_py_module)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-if (ALT_SERVER_MODULE)
-    set(PROJECT_MODULE_NAME python-module)
-    set(COMPILE_FOLDER server)
-    add_definitions(-DALT_SERVER_API)
-    add_definitions(-DSERVER_MODULE)
-elseif(ALT_CLIENT_MODULE)
-    set(PROJECT_MODULE_NAME python-client-module)
-    set(COMPILE_FOLDER client)
-    add_definitions(-DALT_CLIENT_API)
-    add_definitions(-DCLIENT_MODULE)
-endif()
+set(PROJECT_MODULE_NAME python-module)
 
 file(GLOB_RECURSE PROJECT_SOURCE_FILES "./src/*.h" "./src/*.hpp" "./src/*.cpp")
 

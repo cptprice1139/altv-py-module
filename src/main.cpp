@@ -1,22 +1,14 @@
 #include "main.h"
-
-#ifdef ALT_SERVER_MODULE
+#include "runtime.h"
 
 EXPORT bool altMain(alt::ICore* core)
 {
     alt::ICore::SetInstance(core);
 
-    auto runtime = PythonScriptRuntime();
+    auto runtime = PythonScriptRuntime::Instance();
+    core->RegisterScriptRuntime("python", runtime);
 
-    core->RegisterScriptRuntime("myModule", runtime);
-
-    core->LogInfo("Loaded my module!");
+    core->LogColored("~r~ Python module was loaded. Version 1.0.0");
 
     return true;
 }
-
-#endif
-
-#ifdef ALT_CLIENT_MODULE
-
-#endif
