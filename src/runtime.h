@@ -1,8 +1,8 @@
 #pragma once
 
 #include "main.h"
+#include "resource.h"
 
-class PythonResource;
 class PythonRuntime : public alt::IScriptRuntime {
 
     static PythonRuntime* instance;

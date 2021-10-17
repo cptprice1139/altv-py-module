@@ -14,4 +14,11 @@ public:
     {
         return resource;
     }
+
+    PythonRuntime* GetRuntime() const
+    {
+        return runtime;
+    }
+
+
 };
