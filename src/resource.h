@@ -3,7 +3,7 @@
 #include "main.h"
 
 class PythonRuntime;
-class PythonResource : public alt::IResource::Impl {
+class PythonResource : public alt::IResource::Impl{
     PythonRuntime* runtime;
     alt::IResource* resource;
 
@@ -19,6 +19,4 @@ public:
     {
         return runtime;
     }
-
-
 };

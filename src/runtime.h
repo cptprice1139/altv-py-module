@@ -3,8 +3,8 @@
 #include "main.h"
 #include "resource.h"
 
-class PythonRuntime : public alt::IScriptRuntime {
-
+class PythonRuntime : public alt::IScriptRuntime
+{
     static PythonRuntime* instance;
     std::unordered_map<alt::IResource*, PythonResource*> resources;
 

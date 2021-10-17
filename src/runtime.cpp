@@ -22,7 +22,7 @@ void PythonRuntime::DestroyImpl(alt::IResource::Impl *impl)
 
     if (resource != nullptr)
     {
-        //resources.erase(resource->GetIResource(););
+        resources.erase(resource->GetIResource());
         delete resource;
     }
 }
